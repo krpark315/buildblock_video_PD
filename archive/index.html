@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>댓글 원문 아카이브 · 빌드블럭 댓글 페르소나 분석</title>
+<meta name="description" content="빌드블럭 Instagram 릴스와 YouTube 영상에 달린 공개 댓글 53건의 원문, 작성 계정, 달린 게시물, 주제 분류, 화면 캡처 아카이브.">
+<link rel="stylesheet" href="../styles.css?v=20260814130337">
+</head>
+<body data-root="..">
+<a class="skip-link" href="#main">본문으로 이동</a>
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="doc-title" href="../">빌드블럭 댓글 페르소나 분석</a>
+    <nav class="site-nav" aria-label="섹션 탐색">
+      <a href="../#contents">분석 콘텐츠</a>
+      <a href="../#personas">페르소나</a>
+      <a href="../#themes">반복 주제</a>
+      <a href="../#method">분석 방법</a>
+      <a href="../#plans">기획안</a>
+      <a href="../#by-content">영상별 분석</a>
+      <a href="./" class="is-active">댓글 원문</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" style="padding:44px 0 30px">
+    <div class="shell">
+      <p class="eyebrow">Evidence Archive</p>
+      <h1 style="font-size:clamp(24px,3.4vw,34px)">댓글 원문 아카이브</h1>
+      <p class="hero-copy">분석에 쓰인 댓글 53건 전체입니다. 원문, 작성 계정과 공개 여부, 어느 게시물에 달렸는지, 어떤 주제·키워드 신호로 분류됐는지를 함께 봅니다. <b>캡처 검증</b>을 누르면 그 댓글이 실제로 화면에 있는 상태를 확인할 수 있습니다.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:26px;border-bottom:none">
+    <div class="shell">
+      <div class="archive-controls">
+        <input type="search" id="f-q" placeholder="댓글 원문·계정·게시물 제목 검색" aria-label="댓글 검색">
+        <select id="f-platform" aria-label="플랫폼 필터">
+          <option value="">플랫폼 전체</option>
+          <option value="Instagram">Instagram 릴스</option>
+          <option value="YouTube">YouTube</option>
+        </select>
+        <select id="f-theme" aria-label="주제 필터"></select>
+        <select id="f-kw" aria-label="키워드 신호 필터"></select>
+        <select id="f-content" aria-label="콘텐츠 필터"></select>
+        <label for="f-sort">정렬</label>
+        <select id="f-sort" aria-label="정렬">
+          <option value="content">영상순</option>
+          <option value="theme">주제순</option>
+          <option value="likes">공감순</option>
+          <option value="length">길이순</option>
+          <option value="id">수집순</option>
+        </select>
+        <button class="filter-btn" id="f-reset">초기화</button>
+        <span class="result-count" id="result-count"></span>
+      </div>
+      <p class="note" id="filter-note" style="display:none"></p>
+      <div class="archive-list" id="archive-list"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <p class="footer-title">빌드블럭 댓글 페르소나 분석</p>
+    <p class="footer-desc">Instagram 릴스 16편과 YouTube 2편에 달린 공개 댓글 53건을 근거로 페르소나 4명을 도출한 자료입니다. 모든 페르소나는 근거가 된 댓글 원문과 게시물 화면 캡처로 되짚어 확인할 수 있습니다.</p>
+    <div class="footer-bottom">
+      <span>댓글 작성 계정은 A001 형식으로 표기</span>
+      <a href="./">댓글 원문 아카이브</a>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="to-top" aria-label="맨 위로 이동">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="댓글 화면 캡처">
+  <div class="lb-inner">
+    <div class="lb-bar">
+      <div class="lb-info" id="lb-info"></div>
+      <button class="lb-close" id="lb-close" aria-label="닫기">✕</button>
+    </div>
+    <img class="lb-img" id="lb-img" alt="">
+    <p class="lb-hash" id="lb-hash"></p>
+  </div>
+</div>
+
+<script src="../data/report-data.js?v=20260814130337"></script>
+<script src="../app.js?v=20260814130337"></script>
+</body>
+</html>
